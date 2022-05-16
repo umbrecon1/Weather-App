@@ -7,5 +7,9 @@ function GetInfo(){
 fetch('https://api.openweathermap.org/data/2.5/forecast?q='+newName.value+'&appid=32ba0bfed592484379e51106cef3f204')
 .then(response => response.json())
 .then(data => {
+// Minimum
+    for(i = 0; i<5; i++){
+        document.getElementById("day" + (i+1) + "Min").innerHTML = "Min: " + Number(data.list[i].main.temp_min - 273.15).toFixed(1)+ "°";
 
-    
+    } }
+// Maximum
