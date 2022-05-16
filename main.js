@@ -4,4 +4,8 @@ function GetInfo(){
     cityName.innerHTML ="=="+newName.value+"--"
 }
 
-fetch
+fetch('https://api.openweathermap.org/data/2.5/forecast?q='+newName.value+'&appid=32ba0bfed592484379e51106cef3f204')
+.then(response => response.json())
+.then(data => {
+
+    
